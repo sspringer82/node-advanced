@@ -18,6 +18,10 @@ https://github.com/sspringer82/node-advanced
 - https://nodejs.org/dist/latest-v21.x/docs/api/corepack.html - Paketmanager manager
 - http://www.modulecounts.com/ - Anzahl der Module
 - https://npmtrends.com/
+- Debug
+  - https://www.jetbrains.com/help/objc/running-and-debugging-node-js.html
+  - https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+  - https://nodejs.org/dist/latest-v21.x/docs/api/debugger.html
 
 ## Setup
 - Git setup
