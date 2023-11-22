@@ -91,10 +91,10 @@ async function remove() {
     }
   }
 }
-await getAll();
-await getOne();
+// await getAll();
+// await getOne();
 await create();
-await update();
-await remove();
+// await update();
+// await remove();
 
 export default true;

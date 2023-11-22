@@ -11,3 +11,5 @@ CREATE TABLE Address (
 INSERT INTO Address ( firstname, lastname, street, place, zip, country) VALUES ('William', 'Jones', '776 Jillian Turnpike Apt. 913', 'North Daveton', '43853', 'Estonia'), 
 ('William', 'Gallegos', '47609 Bill Circle', 'Kristiborough', '40306', 'Denmark'), 
 ('Catherine', 'Smith', '94753 Jennings Estate', 'Johnmouth', '63874', 'Hong Kong');
+
+

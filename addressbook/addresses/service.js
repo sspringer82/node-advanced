@@ -1,3 +1,5 @@
+import sqlite3 from 'sqlite3';
+
 let addresses = [
   {
     id: 1,
@@ -28,17 +30,58 @@ let addresses = [
   },
 ];
 
+const db = new sqlite3.Database('./db/db.sqlite3');
+
 class Service {
   async getAll() {
-    return addresses;
+    const query = 'SELECT * FROM Address';
+    return new Promise((resolve, reject) => {
+      db.all(query, function (error, rows) {
+        if (error !== null) {
+          reject(error);
+        }
+        resolve(rows);
+      });
+    });
   }
 
   async getOne(id) {
-    const foundAddress = addresses.find((address) => address.id === id);
-    return foundAddress;
+    const query = 'SELECT * FROM Address WHERE id = ?';
+    return new Promise((resolve, reject) => {
+      db.get(query, [id], function (error, row) {
+        console.log(this.lastID);
+        if (error !== null) {
+          reject(error);
+        }
+        resolve(row);
+      });
+    });
   }
 
   async create(newAddress) {
+    const query =
+      'INSERT INTO Address (firstname, lastname, street, place, zip, country) VALUES (?, ?, ?, ?, ?, ?)';
+    return new Promise((resolve, reject) => {
+      db.run(
+        query,
+        [
+          newAddress.firstname,
+          newAddress.lastname,
+          newAddress.street,
+          newAddress.place,
+          newAddress.zip,
+          newAddress.country,
+        ],
+        function (error, row) {
+          console.log(error, this.lastID);
+          if (error !== null) {
+            reject(error);
+          }
+          resolve({ ...newAddress, id: this.lastID });
+        }
+      );
+    });
+
     let nextId = 1;
     if (addresses.length > 0) {
       nextId = Math.max(...addresses.map((address) => address.id)) + 1;
