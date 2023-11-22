@@ -1,6 +1,34 @@
 import express from 'express';
 
-let addresses = [];
+let addresses = [
+  {
+    id: 1,
+    firstname: 'William',
+    lastname: 'Jones',
+    street: '776 Jillian Turnpike Apt. 913',
+    place: 'North Daveton',
+    zip: '43853',
+    country: 'Estonia',
+  },
+  {
+    id: 2,
+    firstname: 'William',
+    lastname: 'Gallegos',
+    street: '47609 Bill Circle',
+    place: 'Kristiborough',
+    zip: '40306',
+    country: 'Denmark',
+  },
+  {
+    id: 3,
+    firstname: 'Catherine',
+    lastname: 'Smith',
+    street: '94753 Jennings Estate',
+    place: 'Johnmouth',
+    zip: '63874',
+    country: 'Hong Kong',
+  },
+];
 
 const app = express();
 app.use(express.json());
@@ -22,7 +50,12 @@ app.get('/:id', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-  const nextId = Math.max(...addresses.map((address) => address.id)) + 1;
+  let nextId = 1;
+  if (addresses.length > 0) {
+    nextId = Math.max(...addresses.map((address) => address.id)) + 1;
+  }
+
+  console.log('nextid', nextId);
 
   const newAddress = { ...request.body, id: nextId };
 

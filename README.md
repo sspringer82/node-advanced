@@ -23,6 +23,9 @@ https://github.com/sspringer82/node-advanced
   - https://code.visualstudio.com/docs/nodejs/nodejs-debugging
   - https://nodejs.org/dist/latest-v21.x/docs/api/debugger.html
 - https://docs.npmjs.com/cli/v10/using-npm/scripts
+- https://fakerjs.dev/
+- https://github.com/nvm-sh/nvm Node Version Manager
+- https://github.com/axios/axios
 
 ## Setup
 - Git setup

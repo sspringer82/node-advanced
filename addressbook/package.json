@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node --experimental-detect-module index.js",
-    "start:dev": "node --watch --experimental-detect-module index.js"
+    "start:dev": "node --watch --experimental-detect-module index.js",
+    "test": "node --experimental-detect-module client.js"
   },
   "keywords": [
     "address",
@@ -16,5 +17,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "type": "module"
 }
