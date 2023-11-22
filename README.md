@@ -22,6 +22,7 @@ https://github.com/sspringer82/node-advanced
   - https://www.jetbrains.com/help/objc/running-and-debugging-node-js.html
   - https://code.visualstudio.com/docs/nodejs/nodejs-debugging
   - https://nodejs.org/dist/latest-v21.x/docs/api/debugger.html
+- https://docs.npmjs.com/cli/v10/using-npm/scripts
 
 ## Setup
 - Git setup
