@@ -78,9 +78,11 @@ app.put('/:id', (request, response) => {
 
   if (index !== -1) {
     addresses[index] = request.body;
+    response.json(addresses[index]);
+    return;
   }
 
-  response.json(addresses[index]);
+  response.status(404).send('not found');
 });
 
 app.delete('/:id', (request, response) => {
@@ -95,6 +97,6 @@ app.listen(8080, () => console.log('Server listens to http://localhost:8080'));
 function getIndexForId(request) {
   const parsedId = parseInt(request.params.id);
 
-  const index = addresses.findIndex((address) => address.id === parseInt);
+  const index = addresses.findIndex((address) => address.id === parsedId);
   return index;
 }
