@@ -1,6 +1,7 @@
 import sqlite3 from 'sqlite3';
+import type { Address, CreateAddress } from './declarations.js';
 
-let addresses = [
+let addresses: Address[] = [
   {
     id: 1,
     firstname: 'William',
@@ -30,13 +31,13 @@ let addresses = [
   },
 ];
 
-const db = new sqlite3.Database('./db/db.sqlite3');
+const db = new sqlite3.Database('../db/db.sqlite3');
 
 class Service {
-  async getAll() {
+  async getAll(): Promise<Address[]> {
     const query = 'SELECT * FROM Address';
     return new Promise((resolve, reject) => {
-      db.all(query, function (error, rows) {
+      db.all(query, function (error, rows: Address[]) {
         if (error !== null) {
           reject(error);
         }
@@ -45,11 +46,10 @@ class Service {
     });
   }
 
-  async getOne(id) {
+  async getOne(id: number): Promise<Address> {
     const query = 'SELECT * FROM Address WHERE id = ?';
     return new Promise((resolve, reject) => {
-      db.get(query, [id], function (error, row) {
-        console.log(this.lastID);
+      db.get(query, [id], function (error, row: Address) {
         if (error !== null) {
           reject(error);
         }
@@ -58,7 +58,7 @@ class Service {
     });
   }
 
-  async create(newAddress) {
+  async create(newAddress: CreateAddress): Promise<Address> {
     const query =
       'INSERT INTO Address (firstname, lastname, street, place, zip, country) VALUES (?, ?, ?, ?, ?, ?)';
     return new Promise((resolve, reject) => {
@@ -72,8 +72,7 @@ class Service {
           newAddress.zip,
           newAddress.country,
         ],
-        function (error, row) {
-          console.log(error, this.lastID);
+        function (error: unknown) {
           if (error !== null) {
             reject(error);
           }
@@ -81,20 +80,9 @@ class Service {
         }
       );
     });
-
-    let nextId = 1;
-    if (addresses.length > 0) {
-      nextId = Math.max(...addresses.map((address) => address.id)) + 1;
-    }
-
-    const createdAddress = { ...newAddress, id: nextId };
-
-    addresses.push(createdAddress);
-
-    return createdAddress;
   }
 
-  async patch(parsedId, updatedAddress) {
+  async patch(parsedId: number, updatedAddress: Address): Promise<Address> {
     const index = addresses.findIndex((address) => address.id === parsedId);
 
     if (index !== -1) {
@@ -103,7 +91,10 @@ class Service {
 
     return addresses[index];
   }
-  async update(parsedId, updatedAddress) {
+  async update(
+    parsedId: number,
+    updatedAddress: Address
+  ): Promise<Address | boolean> {
     const index = addresses.findIndex((address) => address.id === parsedId);
 
     if (index !== -1) {
@@ -113,7 +104,7 @@ class Service {
 
     return false;
   }
-  async remove(id) {
+  async remove(id: number): Promise<void> {
     addresses = addresses.filter((address) => address.id !== id);
   }
 }

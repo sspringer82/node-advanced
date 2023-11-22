@@ -1,11 +1,13 @@
+import { Request, Response } from 'express';
+
 import service from './service.js';
 
 class Controller {
-  async getAll(request, response) {
+  async getAll(request: Request, response: Response) {
     response.json(await service.getAll());
   }
 
-  async getOne(request, response) {
+  async getOne(request: Request, response: Response) {
     const parsedId = parseInt(request.params.id, 10);
 
     const foundAddress = await service.getOne(parsedId);
@@ -18,22 +20,22 @@ class Controller {
     }
   }
 
-  async create(request, response) {
+  async create(request: Request, response: Response) {
     const newAddress = await service.create(request.body);
 
     response.statusCode = 201;
     response.json(newAddress);
   }
 
-  async patch(request, response) {
+  async patch(request: Request, response: Response) {
     const parsedId = parseInt(request.params.id);
 
     const updatedAddress = await service.patch(parsedId, request.body);
 
-    response.json(addresses[index]);
+    response.json(updatedAddress);
   }
 
-  async update(request, response) {
+  async update(request: Request, response: Response) {
     const parsedId = parseInt(request.params.id);
 
     const updatedAddress = await service.update(parsedId, request.body);
@@ -45,7 +47,7 @@ class Controller {
     }
   }
 
-  async remove(request, response) {
+  async remove(request: Request, response: Response) {
     const parsedId = parseInt(request.params.id, 10);
 
     await service.remove(parsedId);

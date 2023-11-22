@@ -31,6 +31,14 @@ https://github.com/sspringer82/node-advanced
   - https://google.github.io/styleguide/jsguide.html
   - https://standardjs.com/
   - https://github.com/sindresorhus/eslint-plugin-unicorn
+- ORM
+  - https://www.prisma.io/
+  - https://sequelize.org/
+  - https://typeorm.io/
+- Typescript
+  - https://www.typescriptlang.org/docs/handbook/intro.html
+  - https://github.com/DefinitelyTyped/DefinitelyTyped
+  - https://www.typescriptlang.org/docs/handbook/utility-types.html
 
 ## Setup
 - Git setup
