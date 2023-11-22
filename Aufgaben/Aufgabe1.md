@@ -2,6 +2,8 @@
 
 Implementiere eine CRUD-API für Adressen. Folgende Pfade werden unterstützt:
 
+Voraussetzungen: `npm add express`
+
 GET / => liefert alle Adressen
 GET /:id => liefert eine Adresse
 POST / => erzeugt eine neue Adresse
