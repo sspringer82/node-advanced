@@ -1,14 +1,12 @@
-(async () => {
-  const { User } = await import('./user.mjs');
-  const { Pet } = await import('./pet.mjs');
+import { Pet as Haustier } from './pet.js';
+import User from './user.js';
 
-  console.log(User);
+console.log(User);
 
-  const klaus = new User('Klaus', 'Müller');
+const klaus = new User('Klaus', 'Müller');
 
-  console.log(klaus.fullname);
+console.log(klaus.fullname);
 
-  const cat = new Pet('cat');
+const cat = new Haustier('cat');
 
-  console.log(cat.fullname);
-})();
+console.log(cat.fullname);
