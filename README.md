@@ -26,6 +26,11 @@ https://github.com/sspringer82/node-advanced
 - https://fakerjs.dev/
 - https://github.com/nvm-sh/nvm Node Version Manager
 - https://github.com/axios/axios
+- Style Guides
+  - https://github.com/airbnb/javascript
+  - https://google.github.io/styleguide/jsguide.html
+  - https://standardjs.com/
+  - https://github.com/sindresorhus/eslint-plugin-unicorn
 
 ## Setup
 - Git setup
