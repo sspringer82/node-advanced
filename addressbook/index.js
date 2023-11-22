@@ -55,8 +55,6 @@ app.post('/', (request, response) => {
     nextId = Math.max(...addresses.map((address) => address.id)) + 1;
   }
 
-  console.log('nextid', nextId);
-
   const newAddress = { ...request.body, id: nextId };
 
   addresses.push(newAddress);
