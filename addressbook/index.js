@@ -1,12 +1,10 @@
-import { Pet as Haustier } from './pet.js';
-import User from './user.js';
+import express from 'express';
 
-console.log(User);
+const app = express();
+app.use(express.json());
 
-const klaus = new User('Klaus', 'Müller');
+app.get('/', (request, response) => {
+  response.json({ firstname: 'Klaus', lastname: 'Müller' });
+});
 
-console.log(klaus.fullname);
-
-const cat = new Haustier('cat');
-
-console.log(cat.fullname);
+app.listen(8080, () => console.log('Server listens to http://localhost:8080'));
