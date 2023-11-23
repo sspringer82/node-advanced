@@ -44,6 +44,8 @@ https://github.com/sspringer82/node-advanced
 - Umgebungsvariablen:
   - Zugriff: https://www.npmjs.com/package/dotenv
   - Systemübergreifende setzen: https://www.npmjs.com/package/cross-env
+- Validierung: 
+  - https://www.npmjs.com/package/class-validator
 
 ## Setup
 - Git setup
