@@ -9,16 +9,36 @@ import {
 } from '@nestjs/common';
 import { Book, CreateBook } from './book';
 import { BooksService } from './books.service';
+import {
+  ApiNotFoundResponse,
+  ApiOperation,
+  ApiResponse,
+} from '@nestjs/swagger';
 
 @Controller('books')
 export class BooksController {
   constructor(private readonly booksService: BooksService) {}
 
+  @ApiOperation({ summary: 'Get all books' })
+  @ApiResponse({
+    status: 200,
+    description: 'Get all books',
+    type: Book,
+    isArray: true,
+  })
   @Get()
   async getAllBooks(): Promise<Book[]> {
     return this.booksService.getAllBooks();
   }
 
+  @ApiOperation({ summary: 'Get one book' })
+  @ApiResponse({
+    status: 200,
+    description: 'Get one book',
+    type: Book,
+    isArray: false,
+  })
+  @ApiNotFoundResponse({ description: 'if a book is not found' })
   @Get('/:id')
   async getOneBook(@Param('id') id: string): Promise<Book> {
     const parsedId = parseInt(id, 10);
