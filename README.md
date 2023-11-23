@@ -39,6 +39,8 @@ https://github.com/sspringer82/node-advanced
   - https://www.typescriptlang.org/docs/handbook/intro.html
   - https://github.com/DefinitelyTyped/DefinitelyTyped
   - https://www.typescriptlang.org/docs/handbook/utility-types.html
+- https://nodemon.io/
+- https://nestjs.com/
 
 ## Setup
 - Git setup
