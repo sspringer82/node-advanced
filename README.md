@@ -41,6 +41,9 @@ https://github.com/sspringer82/node-advanced
   - https://www.typescriptlang.org/docs/handbook/utility-types.html
 - https://nodemon.io/
 - https://nestjs.com/
+- Umgebungsvariablen:
+  - Zugriff: https://www.npmjs.com/package/dotenv
+  - Systemübergreifende setzen: https://www.npmjs.com/package/cross-env
 
 ## Setup
 - Git setup
