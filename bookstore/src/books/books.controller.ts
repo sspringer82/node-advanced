@@ -9,6 +9,7 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { Book, CreateBook } from './book';
 import { BooksService } from './books.service';
@@ -18,7 +19,9 @@ import {
   ApiResponse,
 } from '@nestjs/swagger';
 import { NumberParameter } from './number-parameter';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
+@UseGuards(JwtAuthGuard)
 @Controller('books')
 export class BooksController {
   constructor(private readonly booksService: BooksService) {}
