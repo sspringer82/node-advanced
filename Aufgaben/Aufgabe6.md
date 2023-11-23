@@ -54,6 +54,6 @@ Erzeuge folgende Pfade:
 
 
 TypeORM API: 
-- read: all - `find()` und one - `findOneBy({id: 123})`
-- create + update: `save(book)`
-- delete: `remove(book)`
+- read: all - `booksRepository.find()` und one - `booksRepository.findOneBy({id: 123})`
+- create + update: `booksRepository.save(book)`
+- delete: `booksRepository.remove(book)`
