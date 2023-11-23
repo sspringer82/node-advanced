@@ -3,6 +3,8 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
+  NotFoundException,
   Param,
   ParseIntPipe,
   Post,
@@ -43,7 +45,12 @@ export class BooksController {
   @ApiNotFoundResponse({ description: 'if a book is not found' })
   @Get('/:id')
   async getOneBook(@Param('id', ParseIntPipe) id: number): Promise<Book> {
-    return this.booksService.getOneBook(id);
+    const data = await this.booksService.getOneBook(id);
+
+    if (data === null) {
+      throw new NotFoundException();
+    }
+    return data;
   }
 
   @Post()
@@ -61,6 +68,7 @@ export class BooksController {
   }
 
   @Delete('/:id')
+  @HttpCode(204)
   async removeBook(@Param() params: NumberParameter): Promise<void> {
     const parsedId = parseInt(params.id, 10);
     await this.booksService.removeBook(parsedId);
