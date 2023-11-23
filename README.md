@@ -46,6 +46,7 @@ https://github.com/sspringer82/node-advanced
   - Systemübergreifende setzen: https://www.npmjs.com/package/cross-env
 - Validierung: 
   - https://www.npmjs.com/package/class-validator
+  - https://www.npmjs.com/package/class-validator#validation-decorators
 
 ## Setup
 - Git setup

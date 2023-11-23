@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  ParseIntPipe,
   Post,
   Put,
 } from '@nestjs/common';
@@ -14,6 +15,7 @@ import {
   ApiOperation,
   ApiResponse,
 } from '@nestjs/swagger';
+import { NumberParameter } from './number-parameter';
 
 @Controller('books')
 export class BooksController {
@@ -40,9 +42,8 @@ export class BooksController {
   })
   @ApiNotFoundResponse({ description: 'if a book is not found' })
   @Get('/:id')
-  async getOneBook(@Param('id') id: string): Promise<Book> {
-    const parsedId = parseInt(id, 10);
-    return this.booksService.getOneBook(parsedId);
+  async getOneBook(@Param('id', ParseIntPipe) id: number): Promise<Book> {
+    return this.booksService.getOneBook(id);
   }
 
   @Post()
@@ -60,8 +61,8 @@ export class BooksController {
   }
 
   @Delete('/:id')
-  async removeBook(@Param('id') id: string): Promise<void> {
-    const parsedId = parseInt(id, 10);
+  async removeBook(@Param() params: NumberParameter): Promise<void> {
+    const parsedId = parseInt(params.id, 10);
     await this.booksService.removeBook(parsedId);
   }
 }
