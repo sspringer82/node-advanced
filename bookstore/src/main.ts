@@ -3,6 +3,8 @@ import { AppModule } from './app.module';
 import * as dotenv from 'dotenv';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
+import addMorgan from './morgan';
+import helmet from 'helmet';
 
 dotenv.config();
 
@@ -10,6 +12,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: ['verbose', 'log', 'error', 'warn'],
   });
+
+  addMorgan(app);
+  app.use(helmet());
 
   app.useGlobalPipes(new ValidationPipe());
 

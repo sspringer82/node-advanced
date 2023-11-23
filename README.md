@@ -47,6 +47,8 @@ https://github.com/sspringer82/node-advanced
 - Validierung: 
   - https://www.npmjs.com/package/class-validator
   - https://www.npmjs.com/package/class-validator#validation-decorators
+- https://fastify.dev/
+- https://helmetjs.github.io/
 
 ## Setup
 - Git setup
