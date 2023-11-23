@@ -12,3 +12,14 @@
 6. jwt strategy konfigurieren - verifiziert das token
 7. jwt auth guard - schützt die Endpunkte
 8. Controller mit @UseGuards(JwtAuthGuard) schützen
+
+# Aufgabe 10a
+
+User richtig prüfen: im authService soll gegen User in der Datenbank geprüft werden
+
+- User entität
+- User service
+
+Entität: id, username, password, firstname und lastname
+
+INSERT INTO users (username, passsword, firstname, lastname) VALUES ('admin', 'test', 'admin', 'istrator');
