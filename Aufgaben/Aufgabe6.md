@@ -51,3 +51,9 @@ Erzeuge folgende Pfade:
 * POST /books => erzeugt ein Buch `async create(@Body() createCatDto: CreateCatDto) {`
 * PUT /books/:id => aktualisiert ein Buch
 * DELETE /books/:id => löscht ein Buch
+
+
+TypeORM API: 
+- read: all - `find()` und one - `findOneBy({id: 123})`
+- create + update: `save(book)`
+- delete: `remove(book)`
