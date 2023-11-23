@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   HttpCode,
+  Logger,
   NotFoundException,
   Param,
   ParseIntPipe,
@@ -24,6 +25,8 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 @UseGuards(JwtAuthGuard)
 @Controller('books')
 export class BooksController {
+  private readonly logger = new Logger(BooksController.name);
+
   constructor(private readonly booksService: BooksService) {}
 
   @ApiOperation({ summary: 'Get all books' })
@@ -51,6 +54,7 @@ export class BooksController {
     const data = await this.booksService.getOneBook(id);
 
     if (data === null) {
+      this.logger.error(`Book with id ${id} not found`);
       throw new NotFoundException();
     }
     return data;
