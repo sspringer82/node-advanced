@@ -22,4 +22,4 @@ User richtig prüfen: im authService soll gegen User in der Datenbank geprüft w
 
 Entität: id, username, password, firstname und lastname
 
-INSERT INTO users (username, passsword, firstname, lastname) VALUES ('admin', 'test', 'admin', 'istrator');
+INSERT INTO users (username, password, firstname, lastname) VALUES ('admin', 'test', 'admin', 'istrator');

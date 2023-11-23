@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Book } from './books/book';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
+import { User } from './auth/user';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { AuthModule } from './auth/auth.module';
         logging: false,
         autoSave: true,
         location: configService.get<string>('DATABASE_LOCATION'),
-        entities: [Book],
+        entities: [Book, User],
         migrations: [],
         subscribers: [],
         type: 'sqljs',
