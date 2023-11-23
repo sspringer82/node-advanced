@@ -15,3 +15,5 @@ export class Book {
   @Column()
   year: number;
 }
+
+export type CreateBook = Omit<Book, 'id'>;
