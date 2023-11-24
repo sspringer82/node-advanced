@@ -53,6 +53,8 @@ class Controller {
     await service.remove(parsedId);
 
     response.status(204).send();
+    // response.statusCode = 204;
+    // response.send();
   }
 }
 
