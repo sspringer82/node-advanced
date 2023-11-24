@@ -10,7 +10,8 @@
     "start": "node --experimental-detect-module dist/index.js",
     "start:dev": "node --watch --experimental-detect-module index.js",
     "start:devts": "ts-node index.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "test:cov": "vitest --coverage"
   },
   "keywords": [
     "address",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/sqlite3": "^3.1.11",
+    "@vitest/coverage-v8": "^0.34.6",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2",
     "vitest": "^0.34.6"
