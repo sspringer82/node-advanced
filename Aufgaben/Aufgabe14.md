@@ -6,6 +6,6 @@ Erzeuge dafür die Datei "input.txt" mit beliebigem Inhalt.
 
 Lies den Inhalt mit folgenden Methoden aus:
 
-1. node:fs -> readFileSync
-2. node:fs -> readFile
-3. node:fs/promises -> readFile <= wichtigster Fall
+1. node:fs -> readFileSync => `const data = readFileSync('input.txt', 'utf-8');`
+2. node:fs -> readFile => `readFile('input.txt', 'utf-8', (error, data) => {...});`
+3. node:fs/promises -> readFile <= wichtigster Fall `const promise = readFile('input.txt', 'utf-8');`
