@@ -49,6 +49,13 @@ https://github.com/sspringer82/node-advanced
   - https://www.npmjs.com/package/class-validator#validation-decorators
 - https://fastify.dev/
 - https://helmetjs.github.io/
+- Testing
+  - Mocha: https://mochajs.org/
+  - Chai (assertion library): https://www.chaijs.com/
+  - Sinon (test doubles): https://sinonjs.org/
+  - https://jasmine.github.io/
+  - https://jestjs.io/
+  - https://github.com/vitest-dev/vitest
 
 ## Setup
 - Git setup
