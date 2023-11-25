@@ -57,6 +57,7 @@ https://github.com/sspringer82/node-advanced
   - https://jestjs.io/
   - https://github.com/vitest-dev/vitest
   - https://cucumber.io/docs/installation/javascript/
+- https://pm2.keymetrics.io/
 
 ## Setup
 - Git setup
